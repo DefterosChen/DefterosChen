@@ -10,8 +10,8 @@ import android.os.Environment;
 import android.os.Looper;
 import android.widget.Toast;
 
-import com.kky.healthcaregardens.common.base.utils.DateTimeUtil;
-import com.kky.healthcaregardens.common.base.utils.SystemUtils;
+import com.cxa.base.utils.DateTimeUtil;
+import com.cxa.base.utils.SystemUtils;
 
 import java.io.File;
 import java.io.FileOutputStream;
