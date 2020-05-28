@@ -76,6 +76,7 @@ public class GsonRequest<T> extends Request<T> {
         }
         //提交手机序列号给服务器做认证
 //        myHeaders.put(VolleyUtil.FROM_PDA_FLAG, EncyptDES.encrypt(EncryptMD5.Encrypt(ServiceCall.getRegisterSerialNumber())));
+        
         return myHeaders;
     }
     @Override
