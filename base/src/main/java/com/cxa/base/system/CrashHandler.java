@@ -88,9 +88,9 @@ public class CrashHandler implements UncaughtExceptionHandler {
 //             退出程序
             android.os.Process.killProcess(android.os.Process.myPid());
             System.exit(1);
-            // 当app退出的时候，会执行onTerminate方法，但是有时候不会主动执行。
-            // 那么强制执行这个方法
-           // app.onTerminate();
+//             当app退出的时候，会执行onTerminate方法，但是有时候不会主动执行。
+//             那么强制执行这个方法
+            app.onTerminate();
         }
     }
 
@@ -116,7 +116,7 @@ public class CrashHandler implements UncaughtExceptionHandler {
             }
         }.start();
         // 收集设备参数信息
-       // collectDeviceInfo(mContext);
+        collectDeviceInfo(mContext);
         // 保存日志文件
         saveCrashInfo2File(ex);
         return true;

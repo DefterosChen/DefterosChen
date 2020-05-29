@@ -35,5 +35,8 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'cn.hutool:hutool-all:5.0.7'
 
+    //查看错误日志
+    implementation 'cat.ereza:customactivityoncrash:2.2.0'
+
 
 }

@@ -8,6 +8,7 @@ import com.android.volley.Response;
 import com.android.volley.Response.ErrorListener;
 import com.android.volley.Response.Listener;
 import com.android.volley.toolbox.HttpHeaderParser;
+import com.cxa.base.server.ServiceCall;
 import com.cxa.base.utils.EncryptMD5;
 import com.cxa.base.utils.EncyptDES;
 import com.google.gson.Gson;
@@ -75,7 +76,7 @@ public class GsonRequest<T> extends Request<T> {
             myHeaders = new HashMap<String, String>();
         }
         //提交手机序列号给服务器做认证
-//        myHeaders.put(VolleyUtil.FROM_PDA_FLAG, EncyptDES.encrypt(EncryptMD5.Encrypt(ServiceCall.getRegisterSerialNumber())));
+        myHeaders.put(VolleyUtil.FROM_PDA_FLAG, EncyptDES.encrypt(EncryptMD5.Encrypt(ServiceCall.getRegisterSerialNumber())));
 
         return myHeaders;
     }
