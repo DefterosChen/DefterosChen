@@ -10,6 +10,7 @@ import android.widget.Toast;
  */
 public class BaseService {
 
+    
     private static BaseService baseService;
     private Context context = null;
     private int count = 0; //计数器
@@ -52,5 +53,7 @@ public class BaseService {
             }.start();
         }
     }
+
+
 
 }
