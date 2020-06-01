@@ -9,7 +9,7 @@ import android.widget.Toast;
  * Created by Eric on 2016-07-08.
  */
 public class BaseService {
-    
+
     private static BaseService baseService;
     private Context context = null;
     private int count = 0; //计数器

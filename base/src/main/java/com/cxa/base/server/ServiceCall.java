@@ -1,33 +1,10 @@
 package com.cxa.base.server;
 
 import android.content.Context;
-import android.content.Intent;
-import android.os.Looper;
-import android.widget.Toast;
 
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.cxa.base.MyApplication;
-import com.cxa.base.net.GsonRequest;
-import com.cxa.base.net.Json;
-import com.cxa.base.net.NetWorkUtils;
-import com.cxa.base.net.VolleyUtil;
 import com.cxa.base.utils.BaseUtils;
 import com.cxa.base.utils.EncryptMD5;
-import com.google.gson.Gson;
-import com.kky.healthcaregardens.MyApplication;
-import com.kky.healthcaregardens.common.base.net.GsonRequest;
-import com.kky.healthcaregardens.common.base.net.Json;
-import com.kky.healthcaregardens.common.base.net.NetWorkUtils;
-import com.kky.healthcaregardens.common.base.net.VolleyUtil;
-import com.kky.healthcaregardens.common.base.utils.BaseUtils;
-import com.kky.healthcaregardens.common.base.utils.EncryptMD5;
-import com.kky.healthcaregardens.common.fragment.MainFragment;
-import com.kky.healthcaregardens.common.fragment.mine.LoginFragment;
-import com.kky.healthcaregardens.common.model.vo.LoginUser;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * 基础服务调用
@@ -86,47 +63,47 @@ public class ServiceCall {
      * @param ctx
      */
     public static void loginAgain(Context ctx) {
-        context = ctx;
-        if (!NetWorkUtils.isNetworkConnected(context)) {
-            new Thread() {
-                @Override
-                public void run() {
-                    Looper.prepare();
-                    Toast.makeText(context, "请开启您的网络连接！", Toast.LENGTH_SHORT).show();
-                    Looper.loop();
-                }
-            }.start();
-            return;
-        }
-        new Thread() {
-            @Override
-            public void run() {
-                Looper.prepare();
-                Toast.makeText(context, "正在连接服务...", Toast.LENGTH_LONG).show();
-                Looper.loop();
-            }
-        }.start();
-        // if(true)
-        //return;
-        //自动登录，从本地缓存中取得上次的用户信息
-        String userString = BaseUtils.getLoginUser(context);
-        if (userString == null || userString.trim().equals("")) {
-            //没有缓存，切换到登录界面
-            Intent intent = new Intent();
-            intent.setClass(context, MainFragment.class);
-            context.startActivity(intent);
-            return;
-        }
-        LoginUser user = new Gson().fromJson(userString, LoginUser.class);
-//        if (user.getAccountId() == null || user.getPwd() == null) {
-//            //缓存数据有丢失，切换到登录界面
+//        context = ctx;
+//        if (!NetWorkUtils.isNetworkConnected(context)) {
+//            new Thread() {
+//                @Override
+//                public void run() {
+//                    Looper.prepare();
+//                    Toast.makeText(context, "请开启您的网络连接！", Toast.LENGTH_SHORT).show();
+//                    Looper.loop();
+//                }
+//            }.start();
+//            return;
+//        }
+//        new Thread() {
+//            @Override
+//            public void run() {
+//                Looper.prepare();
+//                Toast.makeText(context, "正在连接服务...", Toast.LENGTH_LONG).show();
+//                Looper.loop();
+//            }
+//        }.start();
+//        // if(true)
+//        //return;
+//        //自动登录，从本地缓存中取得上次的用户信息
+//        String userString = BaseUtils.getLoginUser(context);
+//        if (userString == null || userString.trim().equals("")) {
+//            //没有缓存，切换到登录界面
 //            Intent intent = new Intent();
 //            intent.setClass(context, MainFragment.class);
 //            context.startActivity(intent);
 //            return;
 //        }
-//        //验证登录
-//        login(user.getAccountId().trim(), user.getPwd().trim());
+//        LoginUser user = new Gson().fromJson(userString, LoginUser.class);
+////        if (user.getAccountId() == null || user.getPwd() == null) {
+////            //缓存数据有丢失，切换到登录界面
+////            Intent intent = new Intent();
+////            intent.setClass(context, MainFragment.class);
+////            context.startActivity(intent);
+////            return;
+////        }
+////        //验证登录
+////        login(user.getAccountId().trim(), user.getPwd().trim());
 
     }
 
@@ -137,79 +114,78 @@ public class ServiceCall {
      * @param password
      */
     private static void login(final String accountId, final String password) {
-        Map<String, String> param = new HashMap<String, String>();
-        try {
-            param.put("userId", accountId);
-            param.put("password", password);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        String url = ServiceCall.getServerURL() + "/applogin/login.do";
-        GsonRequest<Json> req = new GsonRequest<Json>(url, Json.class,
-                new Response.Listener<Json>() {
-                    @Override
-                    public void onResponse(Json json) {
-                        if (json.getResult() == 0) {
-                            new Thread() {
-                                @Override
-                                public void run() {
-                                    Looper.prepare();
-                                    Toast.makeText(context, "连接已失效，请重新登录！", Toast.LENGTH_SHORT).show();
-                                    Looper.loop();
-                                }
-                            }.start();
-                            //未通过验证，切换到登录界面
-                            Intent intent = new Intent();
-                            intent.setClass(context, LoginFragment.class);
-                            context.startActivity(intent);
-                        } else {
-                            new Thread() {
-                                @Override
-                                public void run() {
-                                    Looper.prepare();
-                                    Toast.makeText(context, "连接成功，请继续操作！", Toast.LENGTH_SHORT).show();
-                                    Looper.loop();
-                                }
-                            }.start();
-                        }
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError volleyError) {
-                new Thread() {
-                    @Override
-                    public void run() {
-                        Looper.prepare();
-                        Toast.makeText(context, "连接失败，请确定ip地址是否正确或者重新登录！", Toast.LENGTH_LONG).show();
-                        Looper.loop();
-                    }
-                }.start();
-            }
-        }, param);
-        //网络调用
-        VolleyUtil.addToRequestQueue(req);
+//        Map<String, String> param = new HashMap<String, String>();
+//        try {
+//            param.put("userId", accountId);
+//            param.put("password", password);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        String url = ServiceCall.getServerURL() + "/applogin/login.do";
+//        GsonRequest<Json> req = new GsonRequest<Json>(url, Json.class,
+//                new Response.Listener<Json>() {
+//                    @Override
+//                    public void onResponse(Json json) {
+//                        if (json.getResult() == 0) {
+//                            new Thread() {
+//                                @Override
+//                                public void run() {
+//                                    Looper.prepare();
+//                                    Toast.makeText(context, "连接已失效，请重新登录！", Toast.LENGTH_SHORT).show();
+//                                    Looper.loop();
+//                                }
+//                            }.start();
+//                            //未通过验证，切换到登录界面
+//                            Intent intent = new Intent();
+//                            intent.setClass(context, LoginFragment.class);
+//                            context.startActivity(intent);
+//                        } else {
+//                            new Thread() {
+//                                @Override
+//                                public void run() {
+//                                    Looper.prepare();
+//                                    Toast.makeText(context, "连接成功，请继续操作！", Toast.LENGTH_SHORT).show();
+//                                    Looper.loop();
+//                                }
+//                            }.start();
+//                        }
+//                    }
+//                }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError volleyError) {
+//                new Thread() {
+//                    @Override
+//                    public void run() {
+//                        Looper.prepare();
+//                        Toast.makeText(context, "连接失败，请确定ip地址是否正确或者重新登录！", Toast.LENGTH_LONG).show();
+//                        Looper.loop();
+//                    }
+//                }.start();
+//            }
+//        }, param);
+//        //网络调用
+//        VolleyUtil.addToRequestQueue(req);
     }
-
 
 
     /**
      * 获取存储的用户信息token
      */
-    public static String getUserInfoToken() {
-        //获取用户信息显示
-        String userString = BaseUtils.getLoginUser(MyApplication.getInstance());
-        System.out.println("登录账号信息—:" + userString);
-
-        if (userString.isEmpty()) {
-            System.out.println("无登录账号信息");
-            return null;
-        }
-        LoginUser user = new Gson().fromJson(userString, LoginUser.class);
-        String accessToken = user.getAccess_token();
-        System.out.println(accessToken);
-        return accessToken;
-    }
-
-
+//    public static String getUserInfoToken() {
+//        //获取用户信息显示
+//        String userString = BaseUtils.getLoginUser(MyApplication.getInstance());
+//        System.out.println("登录账号信息—:" + userString);
+//
+//        if (userString.isEmpty()) {
+//            System.out.println("无登录账号信息");
+//            return null;
+//        }
+//        LoginUser user = new Gson().fromJson(userString, LoginUser.class);
+//        String accessToken = user.getAccess_token();
+//        System.out.println(accessToken);
+//        return accessToken;
+//    }
 
 }
+
+
