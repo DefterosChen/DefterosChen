@@ -10,7 +10,7 @@ import android.widget.Toast;
  */
 public class BaseService {
 
-    
+
 
     private static BaseService baseService;
     private Context context = null;
