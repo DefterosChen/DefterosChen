@@ -31,6 +31,7 @@ public class BaseService {
 
         showMsg("开始同步...");
     }
+    
 
     //消息计数器回调
     private void endMsg(int i) {
