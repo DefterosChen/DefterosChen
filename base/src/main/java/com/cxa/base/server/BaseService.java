@@ -33,7 +33,7 @@ public class BaseService {
     }
 
 
-    
+
     //消息计数器回调
     private void endMsg(int i) {
         System.out.println("消息计数器回调: "+i);
