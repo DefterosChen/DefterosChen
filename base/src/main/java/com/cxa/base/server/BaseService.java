@@ -40,6 +40,7 @@ public class BaseService {
         }
     }
 
+
     private void showMsg(final String msg){
         if(context!=null){
             new Thread() {
