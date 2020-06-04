@@ -14,7 +14,7 @@ public class ToastUtil {
         Toast.makeText(GlobalConfig.getAppContext(), tips, Toast.LENGTH_SHORT).show();
     }
 
-    
+
 
     public static void showTips(@StringRes int resID){
         Toast.makeText(GlobalConfig.getAppContext(), ResUtil.getStr(resID), Toast.LENGTH_SHORT).show();
