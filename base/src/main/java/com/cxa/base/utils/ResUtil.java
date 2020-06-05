@@ -14,5 +14,6 @@ public class ResUtil {
     public static String getStr(@StringRes int resId, Object... formatArgs){
         return GlobalConfig.getAppContext().getString(resId, formatArgs);
     }
+    
 
 }
