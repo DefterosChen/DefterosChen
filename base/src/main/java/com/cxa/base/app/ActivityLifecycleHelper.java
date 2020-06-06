@@ -145,7 +145,6 @@ public class ActivityLifecycleHelper implements Application.ActivityLifecycleCal
         }
     }
 
-    
     /**
      * 结束指定的Activity
      *
