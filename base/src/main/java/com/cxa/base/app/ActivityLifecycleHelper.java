@@ -160,6 +160,7 @@ public class ActivityLifecycleHelper implements Application.ActivityLifecycleCal
                         if (!activity.isFinishing()) {
                             it.remove();
                             activity.finish();
+
                         }
                     }
                 }
