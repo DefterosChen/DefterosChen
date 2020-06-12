@@ -50,7 +50,6 @@ public class GsonRequest<T> extends Request<T> {
         mMap = map;
     }
 
-    
     public GsonRequest(String url, Class<T> clazz, Listener<T> listener,
                        ErrorListener errorListener) {
         this(Method.GET, url, clazz, listener, errorListener,null);
