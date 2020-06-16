@@ -32,7 +32,6 @@ public class BaseService {
         showMsg("开始同步...");
     }
 
-
     //消息计数器回调
     private void endMsg(int i) {
         System.out.println("消息计数器回调: "+i);
@@ -40,7 +39,6 @@ public class BaseService {
             showMsg("同步已完成！");
         }
     }
-
 
     private void showMsg(final String msg){
         if(context!=null){

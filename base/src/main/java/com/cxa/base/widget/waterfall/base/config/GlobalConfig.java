@@ -27,6 +27,5 @@ public class GlobalConfig {
     public static Context getAppContext() {
         return sAppContext;
     }
-
-
+    
 }
