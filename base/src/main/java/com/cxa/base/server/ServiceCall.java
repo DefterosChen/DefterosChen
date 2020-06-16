@@ -1,10 +1,21 @@
 package com.cxa.base.server;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Looper;
+import android.widget.Toast;
 
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.cxa.base.MyApplication;
+import com.cxa.base.net.GsonRequest;
+import com.cxa.base.net.Json;
+import com.cxa.base.net.VolleyUtil;
 import com.cxa.base.utils.BaseUtils;
 import com.cxa.base.utils.EncryptMD5;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 基础服务调用
@@ -114,57 +125,57 @@ public class ServiceCall {
      * @param password
      */
     private static void login(final String accountId, final String password) {
-//        Map<String, String> param = new HashMap<String, String>();
-//        try {
-//            param.put("userId", accountId);
-//            param.put("password", password);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        String url = ServiceCall.getServerURL() + "/applogin/login.do";
-//        GsonRequest<Json> req = new GsonRequest<Json>(url, Json.class,
-//                new Response.Listener<Json>() {
-//                    @Override
-//                    public void onResponse(Json json) {
-//                        if (json.getResult() == 0) {
-//                            new Thread() {
-//                                @Override
-//                                public void run() {
-//                                    Looper.prepare();
-//                                    Toast.makeText(context, "连接已失效，请重新登录！", Toast.LENGTH_SHORT).show();
-//                                    Looper.loop();
-//                                }
-//                            }.start();
-//                            //未通过验证，切换到登录界面
-//                            Intent intent = new Intent();
+        Map<String, String> param = new HashMap<String, String>();
+        try {
+            param.put("userId", accountId);
+            param.put("password", password);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        String url = ServiceCall.getServerURL() + "/applogin/login.do";
+        GsonRequest<Json> req = new GsonRequest<Json>(url, Json.class,
+                new Response.Listener<Json>() {
+                    @Override
+                    public void onResponse(Json json) {
+                        if (json.getResult() == 0) {
+                            new Thread() {
+                                @Override
+                                public void run() {
+                                    Looper.prepare();
+                                    Toast.makeText(context, "连接已失效，请重新登录！", Toast.LENGTH_SHORT).show();
+                                    Looper.loop();
+                                }
+                            }.start();
+                            //未通过验证，切换到登录界面
+                            Intent intent = new Intent();
 //                            intent.setClass(context, LoginFragment.class);
-//                            context.startActivity(intent);
-//                        } else {
-//                            new Thread() {
-//                                @Override
-//                                public void run() {
-//                                    Looper.prepare();
-//                                    Toast.makeText(context, "连接成功，请继续操作！", Toast.LENGTH_SHORT).show();
-//                                    Looper.loop();
-//                                }
-//                            }.start();
-//                        }
-//                    }
-//                }, new Response.ErrorListener() {
-//            @Override
-//            public void onErrorResponse(VolleyError volleyError) {
-//                new Thread() {
-//                    @Override
-//                    public void run() {
-//                        Looper.prepare();
-//                        Toast.makeText(context, "连接失败，请确定ip地址是否正确或者重新登录！", Toast.LENGTH_LONG).show();
-//                        Looper.loop();
-//                    }
-//                }.start();
-//            }
-//        }, param);
-//        //网络调用
-//        VolleyUtil.addToRequestQueue(req);
+                            context.startActivity(intent);
+                        } else {
+                            new Thread() {
+                                @Override
+                                public void run() {
+                                    Looper.prepare();
+                                    Toast.makeText(context, "连接成功，请继续操作！", Toast.LENGTH_SHORT).show();
+                                    Looper.loop();
+                                }
+                            }.start();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError volleyError) {
+                new Thread() {
+                    @Override
+                    public void run() {
+                        Looper.prepare();
+                        Toast.makeText(context, "连接失败，请确定ip地址是否正确或者重新登录！", Toast.LENGTH_LONG).show();
+                        Looper.loop();
+                    }
+                }.start();
+            }
+        }, param);
+        //网络调用
+        VolleyUtil.addToRequestQueue(req);
     }
 
 
