@@ -28,7 +28,6 @@ public class BaseService {
     public void initBaseData(Context context) {
         this.context = context;
         count = 0; //计数器
-
         showMsg("开始同步...");
     }
 
@@ -39,7 +38,6 @@ public class BaseService {
             showMsg("同步已完成！");
         }
     }
-    
 
     private void showMsg(final String msg){
         if(context!=null){
