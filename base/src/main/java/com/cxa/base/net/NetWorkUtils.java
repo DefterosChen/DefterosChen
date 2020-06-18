@@ -11,7 +11,7 @@ import android.telephony.TelephonyManager;
  *
  */
 public class NetWorkUtils {
-    
+
     /**
      * 判断是否有网络连接
      * @param context
@@ -28,7 +28,6 @@ public class NetWorkUtils {
         }
         return false;
     }
-
 
     /**
      * 判断WIFI网络是否可用
