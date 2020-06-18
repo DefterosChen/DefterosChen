@@ -47,7 +47,6 @@ public class NetWorkUtils {
         return false;
     }
 
-
     /**
      * 判断MOBILE网络是否可用
      * @param context
