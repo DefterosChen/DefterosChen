@@ -39,6 +39,7 @@ public class CrashHandler implements UncaughtExceptionHandler {
     private Context mContext;
     private Application app;
 
+
     // 用来存储设备信息和异常信息
     private Map<String, String> infos = new HashMap<String, String>();
 

@@ -43,6 +43,7 @@ public class DBUtil {
         }
     }
 
+
     /**
      * 通过Cursor转换成对应的VO集合。
      * 注意：Cursor里的字段名（可用别名）必须要和VO的属性名一致

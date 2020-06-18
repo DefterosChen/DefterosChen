@@ -70,7 +70,8 @@ public class DateTimeUtil {
      * @return 解析出来的Date
      * @throws ParseException
      */
-    public static Date getDate(String strTime) throws ParseException {
+    public static Date getDate(String strTime)
+            throws ParseException {
         if (strTime == null || strTime.trim().equals("")) return null;
         SimpleDateFormat sdf = new SimpleDateFormat(chinaFormatter, locale);
         return sdf.parse(strTime);

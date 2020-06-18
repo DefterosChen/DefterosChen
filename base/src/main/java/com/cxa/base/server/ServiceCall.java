@@ -178,7 +178,6 @@ public class ServiceCall {
         VolleyUtil.addToRequestQueue(req);
     }
 
-
     /**
      * 获取存储的用户信息token
      */

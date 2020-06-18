@@ -38,5 +38,4 @@ public class VolleyUtil {
     public interface VolleyCallBack{
         void onSuccess(String result);
     }
-
 }
