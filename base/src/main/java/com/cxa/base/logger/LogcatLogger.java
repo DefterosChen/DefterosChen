@@ -65,7 +65,7 @@ public class LogcatLogger implements ILogger {
         log(priority, tag, message);
     }
 
-    
+
 
     private String getStackTraceString(Throwable t) {
         // Don't replace this with Log.getStackTraceString() - it hides
