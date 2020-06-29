@@ -82,7 +82,7 @@ public class DateTimeUtil {
         SimpleDateFormat sdf = new SimpleDateFormat(patten, locale);
         return sdf.parse(strTime);
     }
-    
+
 
     /**
      * 将字符串解析为Date
