@@ -16,6 +16,7 @@ public class BaseService {
 
     private BaseService(){}
 
+    
     public static BaseService getInstance(){
         if(baseService==null){
             baseService = new BaseService();
@@ -51,5 +52,5 @@ public class BaseService {
             }.start();
         }
     }
-    
+
 }
