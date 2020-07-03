@@ -177,7 +177,7 @@ public class ServiceCall {
         //网络调用
         VolleyUtil.addToRequestQueue(req);
     }
-    
+
     /**
      * 获取存储的用户信息token
      */
