@@ -16,7 +16,7 @@ public class BaseService {
 
     private BaseService(){}
 
-    
+
     public static BaseService getInstance(){
         if(baseService==null){
             baseService = new BaseService();
@@ -39,6 +39,7 @@ public class BaseService {
             showMsg("同步已完成！");
         }
     }
+    
 
     private void showMsg(final String msg){
         if(context!=null){
