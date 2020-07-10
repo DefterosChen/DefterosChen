@@ -23,7 +23,6 @@ import androidx.annotation.NonNull;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
-
 /**
  * <pre>
  *     desc   : 默认Logcat日志记录
