@@ -60,7 +60,6 @@ public class LogcatLogger implements ILogger {
                 message += "\n" + getStackTraceString(t);
             }
         }
-
         log(priority, tag, message);
     }
 
