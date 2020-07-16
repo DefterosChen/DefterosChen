@@ -72,8 +72,7 @@ public class LogcatLogger implements ILogger {
         pw.flush();
         return sw.toString();
     }
-
-
+    
     /**
      * 使用LogCat输出日志，字符长度超过4000则自动换行.
      *
