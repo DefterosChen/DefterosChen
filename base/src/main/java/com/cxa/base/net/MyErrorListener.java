@@ -52,8 +52,7 @@ public class MyErrorListener implements Response.ErrorListener {
             }.start();
         //}
     }
-
-
+    
     /*
     * 以下是Volley的异常列表：
     * AuthFailureError：如果在做一个HTTP的身份验证，可能会发生这个错误。
