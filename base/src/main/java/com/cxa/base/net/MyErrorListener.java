@@ -96,6 +96,7 @@ public class MyErrorListener implements Response.ErrorListener {
             return (error instanceof NetworkError)
                     || (error instanceof NoConnectionError);
         }
+        
 
         /**
          * Determines whether the error is related to server
