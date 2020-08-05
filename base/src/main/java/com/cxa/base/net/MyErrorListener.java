@@ -118,7 +118,6 @@ public class MyErrorListener implements Response.ErrorListener {
          */
         private String handleServerError(Object err) {
             VolleyError error = (VolleyError) err;
-
             NetworkResponse response = error.networkResponse;
 
             if (response != null) {
