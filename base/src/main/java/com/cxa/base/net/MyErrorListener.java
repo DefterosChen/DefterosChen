@@ -108,7 +108,6 @@ public class MyErrorListener implements Response.ErrorListener {
             return (error instanceof ServerError)
                     || (error instanceof AuthFailureError);
         }
-
         /**
          * Handles the server error, tries to determine whether to show a stock
          * message or to show a message retrieved from the server.
