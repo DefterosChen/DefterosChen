@@ -6,7 +6,6 @@ package com.cxa.base.net;
  *
  */
 public class Json {
-
     /**
      * 返回结果标识：0-失败， 1-成功
      */
