@@ -43,7 +43,6 @@ public class Json {
         this.data = data;
     }
 
-
     @Override
     public String toString() {
         return "Json{" +
