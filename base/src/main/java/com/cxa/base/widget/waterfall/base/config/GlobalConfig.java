@@ -10,6 +10,7 @@ import android.content.Context;
  */
 
 public class GlobalConfig {
+
     public static final boolean DEBUG = Boolean.parseBoolean("true");
 
     private static Context sAppContext;
