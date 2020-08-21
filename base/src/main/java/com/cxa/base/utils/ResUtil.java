@@ -3,8 +3,6 @@ package com.cxa.base.utils;
 
 import androidx.annotation.StringRes;
 
-import com.cxa.base.config.GlobalConfig;
-
 
 public class ResUtil {
 
