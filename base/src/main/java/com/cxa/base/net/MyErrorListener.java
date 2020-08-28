@@ -63,6 +63,7 @@ public class MyErrorListener implements Response.ErrorListener {
     * TimeoutError：Socket超时，服务器太忙或网络延迟会产生这个异常。默认情况下，Volley的超时时间为2.5秒。如果得到这个错误可以使用RetryPolicy。
     */
     private class VolleyErrorHelper {
+        
         String generic_server_down = "连接服务器失败！";
         String no_internet = "无网络连接！";
         String generic_error = "网络异常,请稍后再试！";
