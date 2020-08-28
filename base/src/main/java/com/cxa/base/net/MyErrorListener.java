@@ -67,7 +67,6 @@ public class MyErrorListener implements Response.ErrorListener {
         String no_internet = "无网络连接！";
         String generic_error = "网络异常,请稍后再试！";
         String server_error = "服务器端异常！";
-
         /**
          * Returns appropriate message which is to be displayed to the user against
          * the specified error object.
