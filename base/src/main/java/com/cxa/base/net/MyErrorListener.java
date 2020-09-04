@@ -85,7 +85,7 @@ public class MyErrorListener implements Response.ErrorListener {
             }
             return generic_error;
         }
-        
+
 
         /**
          * Determines whether the error is related to network
