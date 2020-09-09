@@ -67,6 +67,7 @@ public class VolleyUtil {
         req.setRetryPolicy(new DefaultRetryPolicy(40 * 1000, 1, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         mQueue.add(req);
     }
+    
     /**
      * 添加默认的请求到队列中
      *
