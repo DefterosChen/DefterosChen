@@ -52,6 +52,7 @@ public class VolleyUtil {
             throw new RuntimeException("volley没有初始化！！") ;
         return mQueue ;
     }
+    
     /**
      * 添加指定标记的请求到队列中
      * 带标记的请求可用于取消请求操作
