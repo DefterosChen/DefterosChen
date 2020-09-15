@@ -19,7 +19,7 @@ public class VolleyUtil {
      * Log or request TAG
      */
     public static final String TAG = "VolleyPatterns";
-    
+
     /**
      * 提交给服务器的标识，识别是从PDA发起的请求
      */
