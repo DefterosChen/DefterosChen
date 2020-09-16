@@ -44,7 +44,6 @@ public class ActivityLifecycleHelper implements Application.ActivityLifecycleCal
         mActivityStack = new Stack<>();
     }
 
-
     @Override
     public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
         Logger.v("[onActivityCreated]:" + StringUtils.getName(activity));
