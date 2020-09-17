@@ -189,7 +189,7 @@ public class ActivityLifecycleHelper implements Application.ActivityLifecycleCal
         return mActivityStack;
     }
 
-    
+
     /**
      * 退出
      */
