@@ -15,6 +15,7 @@ public class GlobalConfig {
 
     private static Context sAppContext;
 
+    
     /**
      * 需在App启动的第一时间给 sAppContext 赋值，
      * 否则依赖 getAppContext() 的地方会有问题。
