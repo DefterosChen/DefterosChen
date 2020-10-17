@@ -185,7 +185,6 @@ public class ActivityLifecycleHelper implements Application.ActivityLifecycleCal
         }
     }
 
-
     public Stack<Activity> getActivityStack() {
         return mActivityStack;
     }
