@@ -178,7 +178,7 @@ public class ActivityLifecycleHelper implements Application.ActivityLifecycleCal
                     if (!activity.isFinishing()) {
                         Logger.d("[FinishActivity]:" + StringUtils.getName(activity));
                         activity.finish();
-                        
+
                     }
                 }
             }
