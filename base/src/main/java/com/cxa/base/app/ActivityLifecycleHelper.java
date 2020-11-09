@@ -176,7 +176,7 @@ public class ActivityLifecycleHelper implements Application.ActivityLifecycleCal
                 Activity activity = mActivityStack.get(i);
                 if (activity != null) {
                     if (!activity.isFinishing()) {
-                        
+
                         Logger.d("[FinishActivity]:" + StringUtils.getName(activity));
                         activity.finish();
 
