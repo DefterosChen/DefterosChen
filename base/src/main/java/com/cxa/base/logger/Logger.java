@@ -51,7 +51,7 @@ public final class Logger {
      */
     private final static int MIN_LOG_PRIORITY = 0;
 
-    
+
     //==============属性================//
     /**
      * 默认的日志记录为Logcat
