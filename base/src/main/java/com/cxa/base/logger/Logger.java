@@ -36,7 +36,7 @@ public final class Logger {
     private Logger() {
         throw new UnsupportedOperationException("Do not need instantiate!");
     }
-
+ 
     //==============常量================//
     /**
      * 默认tag
