@@ -29,7 +29,7 @@ import androidx.annotation.NonNull;
  * </pre>
  */
 public final class Logger {
- 
+
     /**
      * Don't let anyone instantiate this class.
      */
