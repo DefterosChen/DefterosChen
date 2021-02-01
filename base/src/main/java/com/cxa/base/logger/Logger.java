@@ -68,7 +68,6 @@ public final class Logger {
     private static int sLogPriority = MAX_LOG_PRIORITY;
 
     //==============属性设置================//
-
     /**
      * 设置日志记录者的接口
      *
