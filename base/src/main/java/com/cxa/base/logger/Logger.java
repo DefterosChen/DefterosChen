@@ -66,8 +66,7 @@ public final class Logger {
      * 日志打印优先级
      */
     private static int sLogPriority = MAX_LOG_PRIORITY;
-
-
+    
     //==============属性设置================//
 
     /**
