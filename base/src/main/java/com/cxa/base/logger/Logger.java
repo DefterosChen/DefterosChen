@@ -30,6 +30,7 @@ import androidx.annotation.NonNull;
  */
 public final class Logger {
 
+    
 
     /**
      * Don't let anyone instantiate this class.
