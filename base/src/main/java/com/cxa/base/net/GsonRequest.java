@@ -54,7 +54,7 @@ public class GsonRequest<T> extends Request<T> {
                        ErrorListener errorListener) {
         this(Method.GET, url, clazz, listener, errorListener,null);
     }
- 
+
     @Override
     protected Map getParams() throws AuthFailureError {
         //对参数加密
