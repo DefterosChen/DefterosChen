@@ -31,7 +31,7 @@ public class GsonRequest<T> extends Request<T> {
     private Map mMap; //提交 参数
 
     private final Listener<T> mListener;
-
+ 
     private Gson mGson;
 
     private Class<T> mClass;
